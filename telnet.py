@@ -1,6 +1,9 @@
-import telnetlib
-IP = "192.168.2.3"  # IP Base Station
-tn = telnetlib.Telnet(IP, "28097")
-# tn.write()
+import socket
+IP = '192.168.2.4'  # IP referee box
+PORT = 28097  # PORT komunikasi
+sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+
+# Conect ke referee box
+sock.connect((IP, PORT))
 while 1:
-    print(tn.read_all())
+    print(sock.recv(PORT))  # penerimaan data
