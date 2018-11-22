@@ -6,4 +6,5 @@ sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 # Conect ke referee box
 sock.connect((IP, PORT))
 while 1:
-    print(sock.recv(PORT))  # penerimaan data
+    receive = sock.recv(PORT)
+    print(receive.decode())  # penerimaan data
